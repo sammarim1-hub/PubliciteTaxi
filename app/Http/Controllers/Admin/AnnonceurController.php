@@ -71,9 +71,5 @@ class AnnonceurController extends Controller
         $annonceur->delete();
         return redirect()->route('annonceur.index');
     }
-    public function seuil( )
-    {
-
-    }
 
 }
