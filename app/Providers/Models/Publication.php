@@ -1,28 +1,32 @@
 <?php
 
-namespace App\Models;
+namespace App\Providers\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class StatutValidation extends Model
+class Publication extends Model
 {
     protected $fillable = [
-        'libelle',
-        'datevalidation',
-        'commentaire',
+        'titre',
+        'contenu',
+        'datepublication',
+        'actif',
+        'urlmedia',
         'dossier_annonce_id',
     ];
 
-    public function dossierAnnonces(): BelongsTo
+    public function dossierAnnonce(): BelongsTo
     {
         return $this->belongsTo(DossierAnnonce::class);
     }
 
+
     protected function casts(): array
     {
         return [
-            'datevalidation' => 'date',
+            'datepublication' => 'date',
+            'actif' => 'boolean',
         ];
     }
 }

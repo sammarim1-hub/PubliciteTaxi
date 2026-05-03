@@ -26,6 +26,7 @@
                 <a class="nav-link" href="{{ route('annonceur.index') }}">Annonceur</a>
                 <a class="nav-link" href="{{ route('dossierannonce.index') }}">DossierAnnonce</a>
                 <a class="nav-link" href="{{ route('servicepublicitaire.index') }}">ServicePublicitaire</a>
+                <a class="nav-link" href="{{ route('publication.index') }}">Publication</a>
             </div>
 
             <div class="navbar-nav">

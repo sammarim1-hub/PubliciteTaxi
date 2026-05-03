@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Annonceur;
+use App\Providers\Models\Annonceur;
 use Illuminate\Http\Request;
 
 class AnnonceurController extends Controller

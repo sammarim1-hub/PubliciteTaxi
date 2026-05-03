@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Annonceur;
-use App\Models\DossierAnnonce;
-use App\Models\ServicePublicitaire;
+use App\Providers\Models\Annonceur;
+use App\Providers\Models\DossierAnnonce;
+use App\Providers\Models\ServicePublicitaire;
 use Illuminate\Http\Request;
 
 class DossierAnnonceController extends Controller

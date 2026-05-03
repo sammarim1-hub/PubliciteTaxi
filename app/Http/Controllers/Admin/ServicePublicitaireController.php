@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Annonceur;
-use App\Models\ServicePublicitaire;
+use App\Providers\Models\Annonceur;
+use App\Providers\Models\ServicePublicitaire;
 use Illuminate\Http\Request;
 
 class ServicePublicitaireController extends Controller
