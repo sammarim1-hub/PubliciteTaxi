@@ -24,6 +24,8 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="{{ route('dashboard') }}">Home</a>
                 <a class="nav-link" href="{{ route('annonceur.index') }}">Annonceur</a>
+                <a class="nav-link" href="{{ route('dossierannonce.index') }}">DossierAnnonce</a>
+                <a class="nav-link" href="{{ route('servicepublicitaire.index') }}">ServicePublicitaire</a>
             </div>
 
             <div class="navbar-nav">

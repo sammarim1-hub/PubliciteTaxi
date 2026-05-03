@@ -20,7 +20,7 @@ class DossierAnnonce extends Model
 
     public function servicePublicitaire(): BelongsTo
     {
-        return $this->belongsTo(ServicePublicitaire::class);
+        return $this->belongsTo(ServicePublicitaire::class, 'service_publicitaire_id');
     }
     public function publication()
     {

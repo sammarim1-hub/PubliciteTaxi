@@ -22,33 +22,33 @@ class ServicePublicitaire extends Model
     }
     public function timeSheets()
     {
-        return $this->hasMany(TimeSheet::class, 'panneau_publicitaire_id', 'Service_publicitaire_id');
+        return $this->hasMany(TimeSheet::class, 'panneau_publicitaire_id', 'id');
     }
-    public function DossierAnnonces()
+    public function dossierAnnonces()
     {
-        return $this->hasMany(TimeSheet::class);
+        return $this->hasMany(DossierAnnonce::class);
     }
     public function publication()
     {
         return $this->hasManyThrough(
             Publication::class,
             DossierAnnonce::class,
+            'service_publicitaire_id', // FK dans dossier_annonces
+            'dossier_annonce_id',      // FK dans publications
             'id',
-            'id',
-            'dossierAnnonce',
-            'publication'
+            'id'
         );
     }
 
     public function statutvalidation()
     {
         return $this->hasManyThrough(
-            Statutvalidation::class,
+            StatutValidation::class,
             DossierAnnonce::class,
+            'service_publicitaire_id',
+            'dossier_annonce_id',
             'id',
-            'id',
-            'dossierAnnonce',
-            'statutvalidation'
+            'id'
         );
     }
     // Pas de relation Eloquent vers Produit (.NET externe)
@@ -58,10 +58,7 @@ class ServicePublicitaire extends Model
         return $this->idProduit;
     }
 
-    protected function casts(): array
-    {
-        return [
-            'actif' => 'boolean',
-        ];
-    }
+    protected $casts = [
+        'actif' => 'boolean',
+    ];
 }

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AnnonceurController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DossierAnnonceController;
+use App\Http\Controllers\Admin\ServicePublicitaireController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +17,8 @@ Route::middleware('auth')->group(function () {
 
 Route::resources([
     'annonceur'=> AnnonceurController::class,
+    'dossierannonce'=> DossierAnnonceController::class,
+    'servicepublicitaire'=> ServicePublicitaireController::class,
 
 ]);
 

@@ -11,7 +11,6 @@ class AnnonceurController extends Controller
     public function index()
     {
         $annonceurs = Annonceur::all();
-
         return view('admin.annonceur.index', compact('annonceurs'));
     }
 
@@ -66,8 +65,6 @@ class AnnonceurController extends Controller
 
     public function destroy(Annonceur $annonceur)
     {
-        $annonceur->servicepublicitaires()->delete();
-        $annonceur->dossierannonces()->delete();
         $annonceur->delete();
         return redirect()->route('annonceur.index');
     }
